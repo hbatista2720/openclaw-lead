@@ -4,3 +4,5 @@ dist/
 node_modules/
 # CSV generado desde reporte (puede contener datos sensibles)
 infra/twenty-import/empresas_seguimiento.csv
+# Variables solo para Docker local (scripts/dev-local-up.sh)
+infra/env.development

@@ -1,0 +1,30 @@
+Flujo: probar LOCAL → cuando esté bien → VPS (producción)
+============================================================
+
+1) Primera vez en tu Mac (Docker Desktop encendido)
+   cp infra/env.development.example infra/env.development
+   (edita infra/env.development si quieres; APP_SECRET mejor único local)
+
+   chmod +x scripts/dev-local-up.sh scripts/dev-local-down.sh
+   ./scripts/dev-local-up.sh
+
+   Navegador: http://localhost:30002  (SERVER_URL coincide con ese en env.development)
+
+2) Datos del CRM LOCAL
+   El Postgres del Mac es OTRO volumen que el VPS. Todo lo que configures o importes
+   en local NO copia solo al subir código a Git. Para producción repetirías import CSV
+   o exportar/importar DB solo si sabes lo que haces.
+
+3) Qué SÍ lleva Git (código/config del repo)
+   - docker-compose.yml, scripts/, infra/stack.env.example, plantillas de import...
+   Cambios funcionales los pruebas en local → git push → en VPS git pull (+ docker compose).
+
+4) Producción VPS
+   Sigue usando el .env del servidor (contraseñas de Hostinger). No subas infra/env.development.
+   Ejemplo tras push:
+     cd ~/openclaw-lead && git pull && docker compose up -d
+
+Nota
+----
+Si tienes archivo .env en la raíz con datos del VPS, Compose puede combinarlos con
+--env-file. Para local limpio renombra .env antes de ./scripts/dev-local-up.sh .

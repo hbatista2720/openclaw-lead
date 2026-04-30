@@ -4,6 +4,8 @@
 #   mkdir -p data/openclaw-config data/openclaw-workspace
 #   docker compose up -d                    # solo Twenty (CRM)
 #   docker compose --profile openclaw up -d
+# Desarrollo solo en Mac (sin mezclar .env del VPS): ver scripts/dev-local-up.sh
+#   y infra/WORKFLOW_LOCAL_LUEGO_VPS.txt
 # OpenClaw usa imagen precompilada (ghcr.io) por defecto; compilar ./repos/openclaw exige ~8GB+ RAM en Docker.
 #
 # Puertos en el host (rango 30002–30004 por defecto; evita 3000 ocupado):
