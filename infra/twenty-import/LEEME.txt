@@ -11,6 +11,9 @@ Importar seguimiento de leads en Twenty (resumen rápido)
    Por defecto usa la hoja "Abril_Funnel" si existe (embudo completo); si no, "Hoja 4".
 
 2) Una sola vez en Twenty: crear campos personalizados en "Empresa"
+   Listas rápidas en esta carpeta:
+     - CAMPOS_CREAR.txt           (orden y tipo de cada campo)
+     - MAPEO_IMPORT_COLUMNAS.txt  (CSV → campo al importar)
    Ve a Configuración → Objetos → Empresa → Campos. Crea tipo Texto/Número/Fecha según aplique:
 
    - Etapa venta          (texto)

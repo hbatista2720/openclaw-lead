@@ -1,0 +1,22 @@
+Paso «Coincidencia de columnas» al subir empresas_seguimiento.csv
+===============================================================
+
+Cabecera en el CSV             → Campo donde mapearlo en Twenty
+---------------------------------------------------------------
+Nombre empresa                 → Campo ESTÁNDAR: Nombre (Name)
+Teléfono                       → Tu custom: Teléfono
+Correo                         → Tu custom: Correo empresa
+Etapa venta                    → Tu custom: Etapa venta
+Estatus                        → Tu custom: Estatus
+Última actualización           → Tu custom: Última actualización
+Closer                         → Tu custom: Closer
+Encargado                      → Tu custom: Encargado
+Recepción / asistente          → Tu custom: Recepción / asistente (mismo texto que etiqueta)
+Servicios activos             → Tu custom: Servicios activos
+Cantidad líneas / servicios    → Tu custom: Cantidad líneas / servicios
+Valor contrato / ARPU         → Tu custom: Valor contrato / ARPU
+Fecha cierre                  → Tu custom: Fecha cierre
+Red social / web              → Tu custom: Red social / web
+Observaciones                 → Tu custom: Observaciones
+
+Si tus etiquetas en Twenty son un poco distintas, elige manualmente la columna correcta en el desplegable: lo importante es NO dejar líneas sin mapear las obligatorias (sobre todo Nombre).

@@ -1,0 +1,24 @@
+Creación rápida de campos en Twenty → Empresa
+==============================================
+Ruta habitual: Configuración → Espacio de trabajo → Modelo de datos → Empresa → Campos → Añadir campo.
+
+IMPORTANTE: "Nombre empresa" NO lo crees como custom: usa el campo estándar "Nombre".
+
+Crear en este orden (etiqueta sugerida = como en tu CSV):
+
+1) Teléfono                          Tipo: TEXTO (o Teléfono si existe)
+2) Correo empresa                    Tipo: TEXTO / Email
+3) Etapa venta                       Tipo: TEXTO (o Lista de selección si luego cierras valores)
+4) Estatus                           Tipo: TEXTO (o Lista de selección)
+5) Última actualización               Tipo: FECHA Y HORA (si falla import, usar TEXTO)
+6) Closer                            Tipo: TEXTO
+7) Encargado                         Tipo: TEXTO
+8) Recepción / asistente             Tipo: TEXTO
+9) Servicios activos                 Tipo: TEXTO
+10) Cantidad líneas / servicios      Tipo: NÚMERO
+11) Valor contrato / ARPU            Tipo: NÚMERO o MONEDA
+12) Fecha cierre                     Tipo: FECHA
+13) Red social / web                 TIPO: TEXTO o URL / Enlace según opciones del CRM
+14) Observaciones                    Tipo: TEXTO LARGO / Párrafo si existe
+
+Truco: después de crear, abre cualquier empresa y comprueba que los campos aparecen en la ficha antes de importar.
