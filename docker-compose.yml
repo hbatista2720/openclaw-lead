@@ -37,6 +37,16 @@ services:
       STORAGE_S3_NAME: ${STORAGE_S3_NAME:-}
       STORAGE_S3_ENDPOINT: ${STORAGE_S3_ENDPOINT:-}
       APP_SECRET: ${APP_SECRET:-replace_me_with_a_random_string}
+      # Correo (Twenty): deben declararse aquí o el contenedor no verá el .env del host.
+      EMAIL_DRIVER: ${EMAIL_DRIVER:-LOGGER}
+      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-}
+      EMAIL_FROM_NAME: ${EMAIL_FROM_NAME:-}
+      EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:-}
+      EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-587}
+      EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-}
+      EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-}
+      EMAIL_SMTP_NO_TLS: ${EMAIL_SMTP_NO_TLS:-false}
+      IS_EMAIL_VERIFICATION_REQUIRED: ${IS_EMAIL_VERIFICATION_REQUIRED:-false}
     depends_on:
       twenty-db:
         condition: service_healthy
@@ -70,6 +80,16 @@ services:
       STORAGE_S3_NAME: ${STORAGE_S3_NAME:-}
       STORAGE_S3_ENDPOINT: ${STORAGE_S3_ENDPOINT:-}
       APP_SECRET: ${APP_SECRET:-replace_me_with_a_random_string}
+      # Mismo bloque que twenty-server (colas de correo / invitaciones).
+      EMAIL_DRIVER: ${EMAIL_DRIVER:-LOGGER}
+      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-}
+      EMAIL_FROM_NAME: ${EMAIL_FROM_NAME:-}
+      EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:-}
+      EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-587}
+      EMAIL_SMTP_USER: ${EMAIL_SMTP_USER:-}
+      EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-}
+      EMAIL_SMTP_NO_TLS: ${EMAIL_SMTP_NO_TLS:-false}
+      IS_EMAIL_VERIFICATION_REQUIRED: ${IS_EMAIL_VERIFICATION_REQUIRED:-false}
     depends_on:
       twenty-db:
         condition: service_healthy
