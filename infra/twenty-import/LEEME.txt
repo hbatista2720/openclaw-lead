@@ -1,0 +1,42 @@
+Importar seguimiento de leads en Twenty (resumen rápido)
+======================================================
+
+1) Generar el CSV desde tu Excel del reporte de llamadas
+   Desde la raíz del repo (necesitas: python3 -m pip install openpyxl):
+
+   python3 scripts/prepare-twenty-import.py \
+     "/ruta/a/tu/CRM Lead llamadas reporte.xlsx" \
+     --out infra/twenty-import/empresas_seguimiento.csv
+
+   Por defecto usa la hoja "Abril_Funnel" si existe (embudo completo); si no, "Hoja 4".
+
+2) Una sola vez en Twenty: crear campos personalizados en "Empresa"
+   Ve a Configuración → Objetos → Empresa → Campos. Crea tipo Texto/Número/Fecha según aplique:
+
+   - Etapa venta          (texto)
+   - Estatus             (texto)
+   - Última actualización (fecha, si Twenty lo permite; si no, texto)
+   - Closer              (texto o relación a miembro del workspace si lo prefieres)
+   - Encargado           (texto)
+   - Recepción / asistente (texto)
+   - Servicios activos   (texto)
+   - Cantidad líneas / servicios (número)
+   - Valor contrato / ARPU (número o moneda)
+   - Fecha cierre        (fecha)
+   - Red social / web    (texto o enlace)
+   - Observaciones       (texto largo)
+
+   El campo estándar "Nombre" (empresa) lo emparejas con la columna "Nombre empresa".
+   Teléfono: si Twenty no tiene teléfono en Empresa, créalo como campo texto o importa
+   contactos aparte en "Persona" con la columna Correo.
+
+3) Importar en Twenty
+   Empresas → menú (tres puntos) → Importar / Importar datos (según versión).
+   Sube empresas_seguimiento.csv. En el paso de columnas, empareja cada cabecera del CSV
+   con el campo de Empresa (estándar o personalizado).
+
+4) Seguimiento diario
+   Para actualizar: vuelve a exportar el Excel, ejecuta el script de nuevo y repite import
+   (Twenty puede deduplicar por nombre según opciones; revisa la documentación de tu versión).
+
+Nota: no subas empresas_seguimiento.csv a Git si contiene datos de clientes (está en .gitignore).
